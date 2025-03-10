@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>梦幻代码王</title>
-  <!-- 网站图标 -->
+  <title>梦幻代码王 - 高质量脚本教程与资源</title>
+  <meta name="description" content="梦幻代码王 - 提供高质量的脚本教程和资源，帮助您轻松实现自动化任务。">
+  <meta name="keywords" content="梦幻代码王, 脚本教程, 自动化, 晶核脚本, 万龙觉醒脚本">
   <link rel="icon" href="https://pic.imgdb.cn/item/66faeacbf21886ccc03d521b.png" type="image/x-icon">
-  <!-- 引入霞鹜文楷字体 -->
-  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css" />
-  <!-- 引入样式文件 -->
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="autoRedirect(); startTypewriter();">
+<body>
+  <div id="loading">
+    <div class="spinner"></div>
+  </div>
+
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="https://pic.imgdb.cn/item/66faeacbf21886ccc03d521b.png" alt="Logo" class="logo-icon"> <!-- 网站图标 -->
-        <h1 id="dynamic-title"></h1> <!-- 动态标题 -->
+        <img src="https://pic.imgdb.cn/item/66faeacbf21886ccc03d521b.png" alt="Logo" class="logo-icon">
+        <h1 id="dynamic-title"></h1>
       </div>
     </nav>
   </header>
@@ -24,54 +27,22 @@
   <main>
     <section id="home">
       <div class="content">
-        <h1></h1>
+        <h1>欢迎使用</h1>
         <b>
           <span id="countdown">5</span> 秒后将自动跳转到 <a href="https://www.mhdmw.cn:666/">网盘</a>
         </b>
       </div>
     </section>
     <section id="about">
-      <h2><a href="https://www.yuque.com/menghuandaimawang/bxuyhk/ysqzavyemfa3ze6r?#" target="_blank">晶核脚本教程</a>|<a href="https://e.tb.cn/h.TCbrxnccniInTBK?tk=oddgentsVcA" target="_blank">购买</a></h2>
+      <h2><a href="https://www.yuque.com/menghuandaimawang/bxuyhk/ysqzavyemfa3ze6r?#" target="_blank">晶核脚本教程</a> | <a href="https://e.tb.cn/h.TCbrxnccniInTBK?tk=oddgentsVcA" target="_blank">购买</a></h2>
     </section>
     <section id="services">
-      <h2><a href="https://www.yuque.com/menghuandaimawang/nge6zr/wlr8lctvxtgyb2v8?singleDoc#" target="_blank">万龙觉醒脚本教程</a>|<a href="https://e.tb.cn/h.TCRrpv54aoHVD0M?tk=VzsSentINCe" target="_blank">购买</a></h2>
+      <h2><a href="https://www.yuque.com/menghuandaimawang/nge6zr/wlr8lctvxtgyb2v8?singleDoc#" target="_blank">万龙觉醒脚本教程</a> | <a href="https://e.tb.cn/h.TCRrpv54aoHVD0M?tk=VzsSentINCe" target="_blank">购买</a></h2>
     </section>
   </main>
 
-  <!-- 脚本 -->
-  <script>
-    // 导航栏标题打字机动画
-    function startTypewriter() {
-      const titleElement = document.getElementById("dynamic-title");
-      const titleText = "梦幻代码王"; // 目标文本
-      let index = 0;
 
-      function typeWriter() {
-        if (index < titleText.length) {
-          titleElement.textContent += titleText.charAt(index);
-          index++;
-          setTimeout(typeWriter, 500); // 每个字符间隔150ms
-        }
-      }
-      typeWriter();
-    }
 
-    // 自动跳转功能
-    function autoRedirect() {
-      const targetUrl = "https://www.mhdmw.cn:666/";
-      let countdown = 5; // 倒计时时间（秒）
-      const countdownElement = document.getElementById("countdown");
-
-      const interval = setInterval(() => {
-        countdown--;
-        countdownElement.textContent = countdown;
-
-        if (countdown <= 0) {
-          clearInterval(interval);
-          window.location.href = targetUrl;
-        }
-      }, 1000);
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
