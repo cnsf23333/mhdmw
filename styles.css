@@ -1,0 +1,145 @@
+/* 通用样式 */
+/* 设置导航栏文字为动态渐变色 */
+#dynamic-title {
+  font-size: 2rem; /* 标题字体大小 */
+  font-weight: bold; /* 标题加粗 */
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap; /* 防止换行 */
+  background: linear-gradient(90deg, #0004ff, #ee09eefb, #ff0055); /* 动态渐变色 */
+  background-size: 300%; /* 扩大背景范围以实现移动效果 */
+  -webkit-background-clip: text; /* WebKit 前缀 */
+  background-clip: text; /* 标准属性 */
+  color: transparent; /* 使文字透明，以便显示渐变 */
+  animation: gradient-animation 3s linear infinite; /* 添加渐变动画 */
+}
+
+/* 定义渐变动画 */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* 开始位置 */
+  }
+  50% {
+    background-position: 100% 50%; /* 中间位置 */
+  }
+  100% {
+    background-position: 0% 50%; /* 回到起始位置 */
+  }
+}
+
+
+
+/* 定义渐变动画 */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%; /* 开始位置 */
+  }
+  50% {
+    background-position: 100% 50%; /* 中间位置 */
+  }
+  100% {
+    background-position: 0% 50%; /* 回到起始位置 */
+  }
+}
+
+
+body {
+  font-family: "霞鹜文楷", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-image: url('https://s21.ax1x.com/2024/12/27/pAv7481.jpg'); /* 自定义背景图片路径 */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #000; /* 黑色字体 */
+}
+
+/* 导航栏样式 */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1); /* 白色半透明背景 */
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* 模糊效果 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  color: #000;
+}
+
+.logo-icon {
+  width: 65px; /* 宽度调整为 100px */
+  height: 65px; /* 高度调整为 100px */
+  margin-right: 10px; /* 图标与文字间距 */
+}
+
+/* 设置导航栏文字为 h1 的样式 */
+.logo h1 {
+  font-size: 2rem; /* 与 h1 字体大小保持一致 */
+  font-weight: bold; /* h1 字体粗细 */
+  margin: 0; /* 去掉默认外边距 */
+  line-height: 1.2; /* 调整行高 */
+}
+
+/* 页面内容样式 */
+main {
+  padding: 2rem;
+  backdrop-filter: blur(5px); /* 主体模糊效果 */
+  background: rgba(255, 255, 255, 0.4); /* 白色透明背景 */
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+h1, h2 {
+  color: #333; /* 深灰色标题 */
+}
+
+/* 首页内容样式 */
+.content {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#countdown {
+  font-weight: bold;
+  color: #fd3434; /* 倒计时颜色 */
+  font-size: 2rem;
+}
+
+a {
+  color: #007bff; /* 链接为蓝色 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #0056b3; /* 悬停时加深 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .content {
+      margin-top: 20%;
+  }
+
+  .logo-icon {
+      width: 80px; /* 响应式调整图标大小 */
+      height: 80px;
+  }
+}
