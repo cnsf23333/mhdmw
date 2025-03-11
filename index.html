@@ -3,45 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>梦幻代码王 - 高质量脚本教程与资源</title>
-  <meta name="description" content="梦幻代码王 - 提供高质量的脚本教程和资源，帮助您轻松实现自动化任务。">
+  <title>梦幻代码王 - 高质量脚本</title>
+  <meta name="description" content="梦幻代码王 - 提供高质量的脚本教程，帮助您轻松实现自动化任务。">
   <meta name="keywords" content="梦幻代码王, 脚本教程, 自动化, 晶核脚本, 万龙觉醒脚本">
   <link rel="icon" href="https://pic.imgdb.cn/item/66faeacbf21886ccc03d521b.png" type="image/x-icon">
+  <link rel="preconnect" href="https://pic.imgdb.cn">
   <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/lxgwwenkai-regular.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="loading">
-    <div class="spinner"></div>
+  <div id="loading" class="loading-animation">
+    <div class="spinner-box">
+      <div class="spinner"></div>
+      <p class="loading-text">加载中...</p>
+    </div>
   </div>
 
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="https://pic.imgdb.cn/item/66faeacbf21886ccc03d521b.png" alt="Logo" class="logo-icon">
-        <h1 id="dynamic-title"></h1>
+        <img src="https://pic.imgdb.cn/item/66faeacbf21886ccc03d521b.png" 
+             alt="网站Logo" 
+             class="logo-icon">
+        <h1>梦幻代码王</h1>
+      </div>
+      <div class="nav-links">
+        <a href="https://www.mhdmw.cn:666/" class="nav-button cloud-link">
+          <span>资源网盘</span>
+        </a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section id="home">
-      <div class="content">
-        <h1>欢迎使用</h1>
-        <b>
-          <span id="countdown">5</span> 秒后将自动跳转到 <a href="https://www.mhdmw.cn:666/">网盘</a>
-        </b>
-      </div>
-    </section>
-    <section id="about">
-      <h2><a href="https://www.yuque.com/menghuandaimawang/bxuyhk/ysqzavyemfa3ze6r?#" target="_blank">晶核脚本教程</a> | <a href="https://e.tb.cn/h.TCbrxnccniInTBK?tk=oddgentsVcA" target="_blank">购买</a></h2>
-    </section>
-    <section id="services">
-      <h2><a href="https://www.yuque.com/menghuandaimawang/nge6zr/wlr8lctvxtgyb2v8?singleDoc#" target="_blank">万龙觉醒脚本教程</a> | <a href="https://e.tb.cn/h.TCRrpv54aoHVD0M?tk=VzsSentINCe" target="_blank">购买</a></h2>
-    </section>
+    <div class="card-container">
+      <article class="tutorial-card">
+        <h2 class="card-title">晶核脚本</h2>
+        <div class="card-content">
+          <div class="button-group">
+            <a href="https://www.yuque.com/menghuandaimawang/bxuyhk/ysqzavyemfa3ze6r?#" 
+               class="card-button tutorial-btn"
+               target="_blank">
+               查看教程
+            </a>
+            <a href="https://e.tb.cn/h.TCbrxnccniInTBK?tk=oddgentsVcA"
+               class="card-button purchase-btn"
+               target="_blank">
+               立即购买
+            </a>
+            <a href="https://www.mhdmw.cn:666/jinghe" 
+               class="card-button cloud-btn"
+               target="_blank">
+               下载地址
+            </a>
+            <a href="https://qm.qq.com/q/Jfl92pzNAc" 
+               class="card-button group-btn"
+               target="_blank">
+               QQ交流群
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="tutorial-card">
+        <h2 class="card-title">万龙觉醒</h2>
+        <div class="card-content">
+          <div class="button-group">
+            <a href="https://www.yuque.com/menghuandaimawang/nge6zr/wlr8lctvxtgyb2v8?singleDoc#"
+               class="card-button tutorial-btn"
+               target="_blank">
+               查看教程
+            </a>
+            <a href="https://e.tb.cn/h.TCRrpv54aoHVD0M?tk=VzsSentINCe"
+               class="card-button purchase-btn"
+               target="_blank">
+               立即购买
+            </a>
+            <a href="https://www.mhdmw.cn:666/wanlong" 
+               class="card-button cloud-btn"
+               target="_blank">
+               下载地址
+            </a>
+            <a href="https://qm.qq.com/q/b4hd55Ccjm" 
+               class="card-button group-btn"
+               target="_blank">
+               QQ交流群
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
   </main>
 
-
+  <footer class="site-footer">
+    <p>©  梦幻代码王 - 为您提供优质自动化解决方案</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

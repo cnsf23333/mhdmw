@@ -1,38 +1,257 @@
-/* 通用样式 */
-body {
-  font-family: 'LXGW WenKai', sans-serif;
+/* styles.css */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #6c5ce7;
+  --accent-color: #ff4757;
+  --group-color: #2ecc71;
+  --text-dark: #2d3436;
+  --text-light: #f8f9fa;
+  --transition-speed: 0.3s;
+}
+
+/* 基础样式 */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: 'LXGW WenKai', sans-serif;
   line-height: 1.8;
-  letter-spacing: 0.5px;
-  background-image: url('https://s21.ax1x.com/2024/12/27/pAv7481.jpg'); /* 固定图片链接 */
+  background-image: url('https://s21.ax1x.com/2024/12/27/pAv7481.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  color: #333;
+  min-height: 100vh;
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
 }
 
-/* 加载动画 */
-#loading {
+/* 背景遮罩 */
+body::after {
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.5);
+  z-index: -1;
+}
+
+/* 通用链接样式 */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* 加载动画 */
+.loading-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.spinner-box {
+  text-align: center;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  animation: text-pulse 1.5s ease-in-out infinite;
 }
 
 .spinner {
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(74, 144, 226, 0.1);
+  border-top: 4px solid var(--primary-color);
   border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+/* 导航栏 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
   width: 40px;
   height: 40px;
-  animation: spin 1s linear infinite;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  white-space: nowrap;
+  background: linear-gradient(
+    135deg,
+    #FF6B6B 0%,
+    #4ECDC4 25%,
+    #45B7D1 50%,
+    #96F2D7 75%,
+    #FFE66D 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-flow 8s ease infinite;
+}
+
+/* 导航按钮 */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cloud-link {
+  background: rgba(108, 92, 231, 0.1);
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.cloud-link:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 卡片容器 */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+}
+
+.tutorial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform var(--transition-speed) ease;
+}
+
+.tutorial-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 按钮组 */
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.card-button {
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: all var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  border: 2px solid transparent;
+}
+
+/* 按钮类型 */
+.tutorial-btn {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.purchase-btn {
+  background: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.cloud-btn {
+  background: rgba(255, 71, 87, 0.1);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.group-btn {
+  background: rgba(46, 204, 113, 0.1);
+  border-color: var(--group-color);
+  color: var(--group-color);
+}
+
+.card-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 页脚 */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  background: transparent !important;
+  margin-top: auto;
+}
+
+/* 动画 */
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes spin {
@@ -40,142 +259,39 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* 导航栏样式 */
-.navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo-icon {
-  width: 65px;
-  height: 65px;
-  margin-right: 10px;
-}
-
-#dynamic-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-  line-height: 1.2;
-  white-space: nowrap;
-  background: linear-gradient(90deg, #0004ff, #ee09eefb, #ff0055);
-  background-size: 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-animation 3s linear infinite;
-}
-
-@keyframes gradient-animation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* 主体内容样式 */
-main {
-  padding: 2rem;
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.6);
-  margin: 1rem auto;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-section {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-h1, h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #333;
-}
-
-.content {
-  text-align: center;
-  margin-top: 10%;
-}
-
-#countdown {
-  font-weight: bold;
-  color: #ff4757;
-  font-size: 2.5rem;
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-/* 页脚样式 */
-footer {
-  text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
-}
-
-.social-links img {
-  width: 32px;
-  height: 32px;
-  margin: 0 10px;
-  transition: transform 0.3s ease;
-}
-
-.social-links img:hover {
-  transform: scale(1.2);
+@keyframes text-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 /* 响应式设计 */
+@media (max-width: 1024px) {
+  .button-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem;
+    padding: 0.8rem;
   }
-
   .logo-icon {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
   }
-
-  .content {
-    margin-top: 30%;
-  }
-
-  h1 {
+  .logo h1 {
     font-size: 1.5rem;
   }
+  .card-container {
+    padding: 1rem;
+  }
+}
 
-  h2 {
-    font-size: 1.2rem;
+@media (max-width: 480px) {
+  .button-group {
+    grid-template-columns: 1fr;
+  }
+  .card-button {
+    font-size: 0.9rem;
   }
 }
