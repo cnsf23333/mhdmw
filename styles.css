@@ -9,7 +9,6 @@
   --transition-speed: 0.3s;
 }
 
-/* 基础样式 */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,7 +28,6 @@ body {
   flex-direction: column;
 }
 
-/* 背景遮罩 */
 body::after {
   content: '';
   position: fixed;
@@ -37,11 +35,10 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.88);
   z-index: -1;
 }
 
-/* 通用链接样式 */
 a {
   color: inherit;
   text-decoration: none;
@@ -52,49 +49,12 @@ a:hover {
   text-decoration: none;
 }
 
-/* 加载动画 */
-.loading-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.spinner-box {
-  text-align: center;
-}
-
-.loading-text {
-  margin-top: 1rem;
-  color: var(--text-dark);
-  font-size: 1.2rem;
-  animation: text-pulse 1.5s ease-in-out infinite;
-}
-
-.spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid rgba(74, 144, 226, 0.1);
-  border-top: 4px solid var(--primary-color);
-  border-radius: 50%;
-  animation: spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
-}
-
-/* 导航栏 */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: sticky;
@@ -134,7 +94,6 @@ a:hover {
   animation: gradient-flow 8s ease infinite;
 }
 
-/* 导航按钮 */
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -145,7 +104,7 @@ a:hover {
   border-radius: 8px;
   font-weight: 500;
   transition: all var(--transition-speed) ease;
-  text-decoration: none !important;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
 }
@@ -162,7 +121,6 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* 卡片容器 */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -187,7 +145,6 @@ a:hover {
   transform: translateY(-5px);
 }
 
-/* 按钮组 */
 .button-group {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -204,11 +161,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none !important;
   border: 2px solid transparent;
 }
 
-/* 按钮类型 */
 .tutorial-btn {
   background: var(--primary-color);
   color: white;
@@ -239,7 +194,6 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* 页脚 */
 .site-footer {
   text-align: center;
   padding: 2rem;
@@ -247,24 +201,12 @@ a:hover {
   margin-top: auto;
 }
 
-/* 动画 */
 @keyframes gradient-flow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes text-pulse {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
-}
-
-/* 响应式设计 */
 @media (max-width: 1024px) {
   .button-group {
     grid-template-columns: repeat(2, 1fr);
